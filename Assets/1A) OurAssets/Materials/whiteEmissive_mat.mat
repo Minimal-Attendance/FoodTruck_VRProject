@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: orangeEmissive_mat
+  m_Name: whiteEmissive_mat
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_Parent: {fileID: 2100000, guid: 46dd9e70e94cbe14cb2b53fb82006b2e, type: 2}
   m_ModifiedSerializedProperties: 0
@@ -27,6 +27,6 @@ Material:
     m_Ints: []
     m_Floats: []
     m_Colors:
-    - _Color: {r: 1, g: 0.35982987, b: 0, a: 1}
-    - _EmissionColor: {r: 9.734287, g: 0.6528864, b: 0, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 1024, g: 1024, b: 1024, a: 1}
   m_BuildTextureStacks: []
