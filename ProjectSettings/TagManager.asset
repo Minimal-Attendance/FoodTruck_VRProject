@@ -3,7 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - fryingPan
+  - tomato
+  - lettuce
+  - cookedPatty
+  - rawPatty
+  - cheeseSlice
+  - topBun
+  - bottomBun
   layers:
   - Default
   - TransparentFX
