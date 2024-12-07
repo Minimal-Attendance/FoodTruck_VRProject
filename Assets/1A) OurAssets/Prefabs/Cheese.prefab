@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: -0, y: 0.11360629, z: 0}
-  m_LocalScale: {x: 9.911151, y: 9.911149, z: 9.911149}
+  m_LocalScale: {x: 9.91115, y: 9.911149, z: 9.911149}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8353309557898861595}
@@ -225,7 +225,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4757014595846239659, guid: 9c9d168272ed2b64f9a9767fd9d7348f, type: 3}
       propertyPath: placeNames.Array.size
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4757014595846239659, guid: 9c9d168272ed2b64f9a9767fd9d7348f, type: 3}
       propertyPath: placeNames.Array.data[0]
@@ -245,6 +245,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4757014595846239659, guid: 9c9d168272ed2b64f9a9767fd9d7348f, type: 3}
       propertyPath: placeNames.Array.data[4]
+      value: bottomBun
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757014595846239659, guid: 9c9d168272ed2b64f9a9767fd9d7348f, type: 3}
+      propertyPath: placeNames.Array.data[5]
       value: cheeseSlice
       objectReference: {fileID: 0}
     - target: {fileID: 8515371878481805302, guid: 9c9d168272ed2b64f9a9767fd9d7348f, type: 3}

@@ -19,7 +19,7 @@ public class fryingPanActivate : MonoBehaviour
 
     void Update()
     {
-        if (meatCooking)
+        if (meatCooking && fryingPanPlacePoint.placedObject)
         {
             if (cookTime > 0)
             {
