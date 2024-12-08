@@ -9,16 +9,7 @@ public class customerOrder : MonoBehaviour
     public bool wantsLettuce = false;
     public bool wantsCheese = false;
 
-    //-------------------------------
-    //If the player has put on these ingredients
-    public bool hasTomato = false;
-    public bool hasLettuce = false;
-    public bool hasCheese = false;
-
-    //If the player has put on these essential ingredients
-    public bool hasTopBun = false;
-    public bool hasBottomBun = false;
-    public bool hasCookedPatty = false;
+    public int ingredientsNeeded;
 
     //public bool[] burgerIngredients = new bool[3];
 
@@ -49,6 +40,9 @@ public class customerOrder : MonoBehaviour
     {
         int ingredientAmount = Random.Range(1, 4);
 
+        //set to 3 for patty and buns
+        ingredientsNeeded = 3;
+
         //for (int i = 1; i < ingredientAmount; i++)
         //{
         //burgerIngredients[Random.Range(1, 3)] = true;
@@ -56,17 +50,20 @@ public class customerOrder : MonoBehaviour
         if (ingredientAmount <= 1)
         {
             wantsTomato = true;
+            ingredientsNeeded += 1;
         }
         else if (ingredientAmount == 2)
         {
             wantsTomato = true;
             wantsLettuce = true;
+            ingredientsNeeded += 2;
         }
         else if (ingredientAmount >= 3)
         {
             wantsTomato = true;
             wantsLettuce = true;
             wantsCheese = true;
+            ingredientsNeeded += 3;
         }
 
         if (wantsTomato)
@@ -95,19 +92,13 @@ public class customerOrder : MonoBehaviour
         wantsLettuce = false;
         wantsCheese = false;
 
-        hasTomato = false;
-        hasLettuce = false;
-        hasCheese = false;
-
-        hasTopBun = false;
-        hasBottomBun = false;
-        hasCookedPatty = false;
-
         nextOrderText.SetActive(false);
         orderBoardText.SetActive(true);
         tomatoOrderText.SetActive(false);
         lettuceOrderText.SetActive(false);
         cheeseOrderText.SetActive(false);
+
+        ingredientsNeeded = 0;
 
         pickIngredients();
     }

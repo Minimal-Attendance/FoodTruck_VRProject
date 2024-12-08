@@ -8,18 +8,21 @@ public class customerTimer : MonoBehaviour
 {
     [SerializeField] private Image radialTimerImage;
     [SerializeField] private float timeAmount;
-
     [SerializeField] private float cooldownTime = 10;
+    [SerializeField] private int moneyPerOrder = 5;
 
     public bool customerTimerActive;
 
     private float timeAmountStored;
 
     private customerOrder customerOrder;
+    private moneyManager moneyManager;
 
     void Start()
     {
         customerOrder = GetComponent<customerOrder>();
+        moneyManager = GetComponent<moneyManager>();
+
         timeAmountStored = timeAmount;
         customerTimerActive = true;
         customerOrder.pickIngredients();
@@ -56,5 +59,12 @@ public class customerTimer : MonoBehaviour
         customerOrder.resetOrder();
         timeAmount = timeAmountStored;
         radialTimerImage.fillAmount = timeAmount / timeAmountStored;
+    }
+
+    public void customerOrderTaken()
+    {
+        timeAmount = 0;
+        moneyManager.addMoney(moneyPerOrder);
+        moneyPerOrder += 1;
     }
 }
