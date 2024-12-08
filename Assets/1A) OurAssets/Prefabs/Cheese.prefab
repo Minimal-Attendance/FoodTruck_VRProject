@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 443940522684981403}
   - component: {fileID: 7691019430306073557}
   - component: {fileID: 6021661769122570483}
+  - component: {fileID: 4859153959022499683}
   m_Layer: 0
   m_Name: Cheese
   m_TagString: cheeseSlice
@@ -203,6 +204,31 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   lockHandOnGrab: 0
+--- !u!114 &4859153959022499683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8246306890848195697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3049614f012dedc469207bf41aa8944c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  body: {fileID: 443940522684981403}
+  grabbable: {fileID: 6021661769122570483}
+  stabIndex: 0
+  maxStabbers: 1
+  positionDamper: 1000
+  rotationDamper: 1000
+  parentOnStab: 1
+  StartStab:
+    m_PersistentCalls:
+      m_Calls: []
+  EndStab:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &414409585012368365
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -211,58 +237,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7895435752409855982}
     m_Modifications:
-    - target: {fileID: 4757014595846239659, guid: 9c9d168272ed2b64f9a9767fd9d7348f, type: 3}
-      propertyPath: matchRotation
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4757014595846239659, guid: 9c9d168272ed2b64f9a9767fd9d7348f, type: 3}
-      propertyPath: resizeOnPlace
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4757014595846239659, guid: 9c9d168272ed2b64f9a9767fd9d7348f, type: 3}
-      propertyPath: nameCompareType
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4757014595846239659, guid: 9c9d168272ed2b64f9a9767fd9d7348f, type: 3}
-      propertyPath: placeNames.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4757014595846239659, guid: 9c9d168272ed2b64f9a9767fd9d7348f, type: 3}
-      propertyPath: placeNames.Array.data[0]
-      value: tomato
-      objectReference: {fileID: 0}
-    - target: {fileID: 4757014595846239659, guid: 9c9d168272ed2b64f9a9767fd9d7348f, type: 3}
-      propertyPath: placeNames.Array.data[1]
-      value: cookedPatty
-      objectReference: {fileID: 0}
-    - target: {fileID: 4757014595846239659, guid: 9c9d168272ed2b64f9a9767fd9d7348f, type: 3}
-      propertyPath: placeNames.Array.data[2]
-      value: lettuce
-      objectReference: {fileID: 0}
-    - target: {fileID: 4757014595846239659, guid: 9c9d168272ed2b64f9a9767fd9d7348f, type: 3}
-      propertyPath: placeNames.Array.data[3]
-      value: topBun
-      objectReference: {fileID: 0}
-    - target: {fileID: 4757014595846239659, guid: 9c9d168272ed2b64f9a9767fd9d7348f, type: 3}
-      propertyPath: placeNames.Array.data[4]
-      value: bottomBun
-      objectReference: {fileID: 0}
-    - target: {fileID: 4757014595846239659, guid: 9c9d168272ed2b64f9a9767fd9d7348f, type: 3}
-      propertyPath: placeNames.Array.data[5]
-      value: cheeseSlice
-      objectReference: {fileID: 0}
-    - target: {fileID: 8515371878481805302, guid: 9c9d168272ed2b64f9a9767fd9d7348f, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.0030089088
-      objectReference: {fileID: 0}
-    - target: {fileID: 8515371878481805302, guid: 9c9d168272ed2b64f9a9767fd9d7348f, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.0024143194
-      objectReference: {fileID: 0}
-    - target: {fileID: 8515371878481805302, guid: 9c9d168272ed2b64f9a9767fd9d7348f, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.0030089088
-      objectReference: {fileID: 0}
     - target: {fileID: 8515371878481805302, guid: 9c9d168272ed2b64f9a9767fd9d7348f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -302,10 +276,6 @@ PrefabInstance:
     - target: {fileID: 8515371878481805302, guid: 9c9d168272ed2b64f9a9767fd9d7348f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 130
-      objectReference: {fileID: 0}
-    - target: {fileID: 8515371878481805302, guid: 9c9d168272ed2b64f9a9767fd9d7348f, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9101538457139890465, guid: 9c9d168272ed2b64f9a9767fd9d7348f, type: 3}
       propertyPath: m_Name

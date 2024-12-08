@@ -37,6 +37,7 @@ public class fryingPanActivate : MonoBehaviour
     public void cookMeat()
     {
         meatCooking = true;
+        panSmoke = GetComponentInChildren<ParticleSystem>();
         panSmoke.Play();
     }
 

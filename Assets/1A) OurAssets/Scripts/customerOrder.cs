@@ -42,7 +42,7 @@ public class customerOrder : MonoBehaviour
     {
         int ingredientAmount = Random.Range(1, 4);
 
-        //set to 3 for patty and buns
+        //set for patty and buns
         ingredientsNeeded = 3;
 
         //for (int i = 1; i < ingredientAmount; i++)
@@ -100,7 +100,7 @@ public class customerOrder : MonoBehaviour
         lettuceOrderText.SetActive(false);
         cheeseOrderText.SetActive(false);
 
-        ingredientsNeeded = 0;
+        ingredientsNeeded = 444;
 
         pickIngredients();
     }

@@ -8,48 +8,63 @@ public class orderPlacePoint : MonoBehaviour
     [SerializeField] private customerOrder customerOrder;
     [SerializeField] private customerTimer customerTimer;
     public int ingredientsPlaced;
-    private bool orderCorrect = false;
+
+    private GameObject topBun;
+    private GameObject bottomBun;
+    private GameObject cookedPatty;
+    private GameObject tomato;
+    private GameObject cheeseSlice;
+    private GameObject lettuce;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("topBun"))
         {
             ingredientsPlaced += 1;
+            topBun = other.gameObject;
         }
         if (other.CompareTag("bottomBun"))
         {
             ingredientsPlaced += 1;
+            bottomBun = other.gameObject;
         }
         if (other.CompareTag("cookedPatty"))
         {
             ingredientsPlaced += 1;
+            cookedPatty = other.gameObject;
         }
 
         if (customerOrder.wantsCheese && other.CompareTag("cheeseSlice"))
         {
             ingredientsPlaced += 1;
+            cheeseSlice = other.gameObject;
         }
         else if (!customerOrder.wantsCheese && other.CompareTag("cheeseSlice"))
         {
             ingredientsPlaced -= 1;
+            cheeseSlice = null;
         }
 
         if (customerOrder.wantsLettuce && other.CompareTag("lettuce"))
         {
             ingredientsPlaced += 1;
+            lettuce = other.gameObject;
         }
         else if (!customerOrder.wantsLettuce && other.CompareTag("lettuce"))
         {
             ingredientsPlaced -= 1;
+            lettuce = null;
         }
 
         if (customerOrder.wantsTomato && other.CompareTag("tomato"))
         {
             ingredientsPlaced += 1;
+            tomato = other.gameObject;
         }
         else if (!customerOrder.wantsTomato && other.CompareTag("tomato"))
         {
             ingredientsPlaced -= 1;
+            tomato = null;
         }
 
         checkIngredientsPlaced();
@@ -60,63 +75,66 @@ public class orderPlacePoint : MonoBehaviour
         if (other.CompareTag("topBun"))
         {
             ingredientsPlaced -= 1;
+            topBun = null;
         }
         if (other.CompareTag("bottomBun"))
         {
             ingredientsPlaced -= 1;
+            bottomBun = null;
         }
         if (other.CompareTag("cookedPatty"))
         {
             ingredientsPlaced -= 1;
+            cookedPatty = null;
         }
 
         if (customerOrder.wantsCheese && other.CompareTag("cheeseSlice"))
         {
             ingredientsPlaced -= 1;
+            cheeseSlice = null;
         }
         else if (!customerOrder.wantsCheese && other.CompareTag("cheeseSlice"))
         {
             ingredientsPlaced += 1;
+            cheeseSlice = null;
         }
 
         if (customerOrder.wantsLettuce && other.CompareTag("lettuce"))
         {
             ingredientsPlaced -= 1;
+            lettuce = null;
         }
         else if (!customerOrder.wantsLettuce && other.CompareTag("lettuce"))
         {
             ingredientsPlaced += 1;
+            lettuce = null;
         }
 
         if (customerOrder.wantsTomato && other.CompareTag("tomato"))
         {
             ingredientsPlaced -= 1;
+            tomato = null;
         }
         else if (!customerOrder.wantsTomato && other.CompareTag("tomato"))
         {
             ingredientsPlaced += 1;
+            tomato = null;
         }
     }
 
     public void checkIngredientsPlaced()
     {
-        if (ingredientsPlaced == customerOrder.ingredientsNeeded)
+        if (ingredientsPlaced >= customerOrder.ingredientsNeeded)
         {
-            orderCorrect = true;
             customerTimer.customerOrderTaken();
             ingredientsPlaced = 0;
-        }
-    }
 
-    private void OnTriggerStay(Collider other)
-    {
-        if (orderCorrect)
-        {
-            orderCorrect = false;
-            if(other.CompareTag("tomato") || other.CompareTag("topBun") || other.CompareTag("bottomBun") || other.CompareTag("cookedPatty") || other.CompareTag("lettuce") || other.CompareTag("cheeseSlice"))
-            {
-                Destroy(other.gameObject);
-            }
+            Destroy(topBun);
+            Destroy(bottomBun);
+            Destroy(cookedPatty);
+            Destroy(tomato);
+            Destroy(lettuce);
+            Destroy(cheeseSlice);
         }
     }
 }
