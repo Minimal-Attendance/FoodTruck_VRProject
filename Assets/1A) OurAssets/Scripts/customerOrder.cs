@@ -32,6 +32,8 @@ public class customerOrder : MonoBehaviour
 
         orderBoardText.SetActive(true);
         nextOrderText.SetActive(false);
+
+        pickIngredients();
         //burgerIngredients[1] = wantsTomato;
         //burgerIngredients[2] = wantsLettuce;
         //burgerIngredients[3] = wantsCheese;

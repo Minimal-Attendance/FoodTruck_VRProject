@@ -38,6 +38,7 @@ public class customerTimer : MonoBehaviour
         else if (timeAmount <= 0 && customerTimerActive)
         {
             customerTimerActive = false;
+            radialTimerImage.fillAmount = 0;
             StartCoroutine(timerCooldown());
             customerOrder.turnOffOrderBoard();
             Debug.Log("No Time Left");
