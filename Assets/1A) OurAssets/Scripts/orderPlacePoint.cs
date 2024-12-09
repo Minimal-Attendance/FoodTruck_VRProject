@@ -7,6 +7,7 @@ public class orderPlacePoint : MonoBehaviour
 {
     [SerializeField] private customerOrder customerOrder;
     [SerializeField] private customerTimer customerTimer;
+    private AudioSource audioSource;
     public int ingredientsPlaced;
 
     private GameObject topBun;
@@ -15,6 +16,11 @@ public class orderPlacePoint : MonoBehaviour
     private GameObject tomato;
     private GameObject cheeseSlice;
     private GameObject lettuce;
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -135,6 +141,8 @@ public class orderPlacePoint : MonoBehaviour
             Destroy(tomato);
             Destroy(lettuce);
             Destroy(cheeseSlice);
+
+            audioSource.Play();
         }
     }
 }
